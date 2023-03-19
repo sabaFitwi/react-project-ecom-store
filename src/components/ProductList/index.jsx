@@ -79,10 +79,11 @@
 
 // export default ProductListCard;
 
-import React, { useEffect, useState } from 'react';
-import Product from '../../pages/Product';
+import React, { useEffect, useState } from "react";
+import Product from "../Product";
 
-import {ProductUrl} from '../../utility/Constants'
+import { ProductUrl } from "../../utility/Constants";
+import { ProductCard } from "./index.styled";
 
 function ProductList() {
   const [products, setProducts] = useState([]);
@@ -119,11 +120,11 @@ function ProductList() {
   }
 
   return (
-    <ul>
+    <ProductCard>
       {products.map((product) => (
         <Product key={product.id} product={product} />
       ))}
-    </ul>
+    </ProductCard>
   );
 }
 

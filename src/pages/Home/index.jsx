@@ -1,11 +1,15 @@
 import React from "react";
+
+import Banner from "../../components/Banner";
+
 import ProductList from "../../components/ProductList";
-function Product() {
+
+function Home() {
   return (
     <div>
+      <Banner />
       <ProductList />
     </div>
   );
 }
-
-export default Product;
+export default Home;
