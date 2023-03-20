@@ -16,7 +16,7 @@ import { Routes, Route } from "react-router-dom";
 
 import Home from "./pages/Home";
 import Product from "./pages/Product";
-// //import ProductDetail from "./pages/DetailPage";
+import ProductDetail from "./pages/ProductDetail";
 import RouteNotFound from "./pages/RouteNotFound";
 import Layout from "./components/Layout";
 // //import Cart from "./pages/Cart";
@@ -30,6 +30,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="products" element={<Product />} />
           <Route path="contact" element={<Contact />} />
+          <Route path="product/:id" element={<ProductDetail />} />
           <Route path="*" element={<RouteNotFound />} />
         </Route>
       </Routes>
