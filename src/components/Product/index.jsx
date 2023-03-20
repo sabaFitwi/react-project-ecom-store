@@ -13,7 +13,7 @@ function Product(props) {
       {discountPercentage > 0 && (
         <S.DiscountTag>{discountPercentage}% off</S.DiscountTag>
       )}
-      <Link to={`/src/pages/ProductDetail/${id}`}>
+      <Link to={`../../ProductDetail/${id}`}>
         <S.ProductImage src={imageUrl} alt={title} />
       </Link>
       <h3>{title}</h3>
