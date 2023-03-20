@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
+import { ProductUrl as url } from "../../utility/Constants";
 
 const ProductDetailContainer = styled.div`
   display: flex;
@@ -53,13 +54,46 @@ const AddToCartButton = styled.button`
   }
 `;
 
-export default function ProductDetail({ products }) {
+export default function ProductDetail() {
+  const [product, setProducts] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [isError, setIsError] = useState(false);
+  console.log(url);
   const { id } = useParams();
-  const product = products.find((product) => product.id === Number(id));
 
-  if (!product) {
-    return <div>Product not</div>;
+  useEffect(() => {
+    async function getData() {
+      try {
+        setIsLoading(true);
+        setIsError(false);
+        const fetchedData = await fetch(url + id);
+        const json = await fetchedData.json();
+
+        setProducts(json);
+      } catch (error) {
+        console.log(error);
+        setIsError(true);
+      } finally {
+        setIsLoading(false);
+      }
+    }
+
+    getData();
+  }, [id]);
+
+  if (isLoading) {
+    return <div>Loading...</div>;
   }
+
+  if (isError) {
+    return <div>Error is occering do some thing</div>;
+  }
+
+  // const product = products.find((product) => product.id === Number(id));
+
+  // if (!product) {
+  //   return <div>Product not</div>;
+  // }
 
   const { title, description, rating, price } = product;
 
