@@ -2,12 +2,15 @@ import React from "react";
 import * as S from "./index.styled";
 import { Link } from "react-router-dom";
 //import ProductDetail from "../../pages/ProductDetail";
+import { useCart } from "../../hook/useCart";
 
 function Product(props) {
   const { id, title, imageUrl, discountedPrice, price } = props.product;
   const discountPercentage = Math.round(
     ((price - discountedPrice) / price) * 100
   );
+  const { addToCart } = useCart();
+
   return (
     <S.ProductItem key={id}>
       {discountPercentage > 0 && (
@@ -28,7 +31,9 @@ function Product(props) {
           `$${price}`
         )}
       </p>
-      <S.AddToCartButton>Add to cart</S.AddToCartButton>
+      <S.AddToCartButton onClick={() => addToCart(id)}>
+        Add to cart
+      </S.AddToCartButton>
     </S.ProductItem>
   );
 }

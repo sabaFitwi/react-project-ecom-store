@@ -1,6 +1,6 @@
-import styled from 'styled-components';
-import { Link } from 'react-router-dom';
-import { media } from '../../styles/media';
+import styled from "styled-components";
+import { Link } from "react-router-dom";
+import { media } from "../../styles/media";
 export const NavigationBar = styled.nav`
   flex: 70%;
   display: flex;
@@ -22,7 +22,7 @@ export const NavigationItem = styled(Link)`
   }
 `;
 
-export const ShoppingCartIcon = styled.div`
+export const ShoppingCartIcon = styled(Link)`
   margin: 0 1rem;
   font-size: 1.5rem;
   display: inline-flex;
@@ -70,8 +70,9 @@ export const MenuList = styled.div`
   align-items: center;
   justify-content: center;
 
-  ${media.desktop} {
-    display: ${(props) => (props.open ? 'flex' : 'none')};
+  ${media.mobile} {
+    display: ${({ open }) => (open ? "flex" : "none")};
+    flex-direction: column;
     position: absolute;
     top: 100%;
     left: 0;

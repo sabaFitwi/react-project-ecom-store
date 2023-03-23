@@ -13,6 +13,7 @@ root.render(
     <BrowserRouter>
       <Theme>
         <GlobalStyle />
+
         <App />
       </Theme>
     </BrowserRouter>
