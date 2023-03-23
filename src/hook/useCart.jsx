@@ -2,28 +2,10 @@ import { create } from "zustand";
 
 const useCartStore = create((set) => ({
   products: [],
-  cart: [],
+  cart: JSON.parse(localStorage.getItem("cart")) || [],
   isLoading: false,
   hasErrors: false,
-  //addProductToCart: (id) => set((state) => ({ cart: [...state.cart, id] })),
 
-  //},
-  //   addProductToCart: (id, quantity = 1) => {
-  //     set((state) => {
-  //       const index = state.cart.findIndex((item) => item.id === id);
-  //       if (index === -1) {
-  //         return { cart: [...state.cart, { id, quantity }] };
-  //       } else {
-  //         const updatedItem = {
-  //           ...state.cart[index],
-  //           quantity: state.cart[index].quantity + quantity,
-  //         };
-  //         const updatedCart = [...state.cart];
-  //         updatedCart.splice(index, 1, updatedItem);
-  //         return { cart: updatedCart };
-  //       }
-  //     });
-  //},
   addProductToCart: (id, quantity = 1) => {
     set((state) => {
       const itemIndex = state.cart.findIndex((item) => item.id === id);
@@ -38,13 +20,23 @@ const useCartStore = create((set) => ({
       } else {
         updatedCart.push({ id, quantity });
       }
+      localStorage.setItem("cart", JSON.stringify(updatedCart));
       return { cart: updatedCart };
     });
   },
+
   removeFromCart: (id) => {
-    set((state) => ({ cart: state.cart.filter((item) => item.id !== id) }));
+    set((state) => {
+      const updatedCart = state.cart.filter((item) => item.id !== id);
+
+      localStorage.setItem("cart", JSON.stringify(updatedCart));
+      return { cart: updatedCart };
+    });
   },
-  clearCart: () => set({ cart: [] }),
+  clearCart: () => {
+    localStorage.removeItem("cart");
+    set({ cart: [] });
+  },
   fetchProducts: async (url) => {
     set(() => ({ loading: true }));
     try {

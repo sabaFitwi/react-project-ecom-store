@@ -41,7 +41,7 @@ const CartBag = () => {
 
   useEffect(() => {
     fetchProducts(ProductUrl);
-  }, []);
+  }, [fetchProducts]);
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -53,12 +53,13 @@ const CartBag = () => {
   /**
    * calculating the total price
    */
-  const subtotal = cart.reduce(
-    (acc, item) =>
-      acc +
-      item.quantity * products.find((product) => product.id === item.id).price,
-    0
-  );
+  const subtotal = cart.reduce((acc, item) => {
+    const product = products.find((product) => product.id === item.id);
+    if (!product) {
+      return acc;
+    }
+    return acc + item.quantity * product.price;
+  }, 0);
   const vat = 0.25 * subtotal;
   const total = subtotal + vat;
 
@@ -76,9 +77,13 @@ const CartBag = () => {
           {cart.length > 0 ? (
             cart.map((item) => {
               const { id, quantity } = item;
-              const { title, price, imageUrl } = products.find(
+              const product = products.find(
                 (currProduct) => currProduct.id === id
               );
+              if (!product) {
+                return null;
+              }
+              const { title, price, imageUrl } = product;
 
               return (
                 <Row key={id}>

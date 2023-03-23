@@ -11,7 +11,7 @@ function ProductList() {
 
   useEffect(() => {
     fetchProducts(ProductUrl);
-  }, []);
+  }, [fetchProducts]);
 
   if (isLoading) {
     return <div>Loading...</div>;
