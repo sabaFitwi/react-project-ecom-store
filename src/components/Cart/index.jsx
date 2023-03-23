@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { ProductUrl } from "../../utility/Constants";
 import { useCart } from "../../hook/useCart";
 
+import { FaRegTrashAlt } from "react-icons/fa";
+
 import {
   Wrapper,
   Row,
@@ -22,6 +24,7 @@ import {
   SummaryItem,
   SummaryTitle,
   Button,
+  EmptyItem,
 } from "./indexStyle";
 
 const CartBag = () => {
@@ -47,11 +50,17 @@ const CartBag = () => {
   if (hasErrors) {
     return <div>Error is occering do some thing</div>;
   }
-
-  const total = products.reduce(
-    (acc, item) => acc + item.price * item.quantity,
+  /**
+   * calculating the total price
+   */
+  const subtotal = cart.reduce(
+    (acc, item) =>
+      acc +
+      item.quantity * products.find((product) => product.id === item.id).price,
     0
   );
+  const vat = 0.25 * subtotal;
+  const total = subtotal + vat;
 
   return (
     <Wrapper>
@@ -64,49 +73,49 @@ const CartBag = () => {
       </Top>
       <Bottom>
         <Info>
-          {""}
-          {cart.map((item) => {
-            const { id, quantity } = item;
-            const { title, price, imageUrl } = products.find(
-              (currProduct) => currProduct.id === id
-            );
-            console.log("currProduct");
-            return (
-              <Row key={id}>
-                <Image src={imageUrl} alt={title} key={id} />
-                <PriceDetail>
-                  <ProductName>{title}</ProductName>
-                  <ProductPrice>{price}</ProductPrice>
-                </PriceDetail>
-                <ProductAmountContainer>
-                  <button onClick={() => minusOne(id)}>-</button>
-                  <ProductAmount>{quantity}</ProductAmount>
-                  <button onClick={() => plusOne(id)}>+</button>
-                </ProductAmountContainer>
-                <RemoveButton onClick={() => removeFromCart(id, quantity)}>
-                  x
-                </RemoveButton>
-              </Row>
-            );
-          })}
+          {cart.length > 0 ? (
+            cart.map((item) => {
+              const { id, quantity } = item;
+              const { title, price, imageUrl } = products.find(
+                (currProduct) => currProduct.id === id
+              );
+
+              return (
+                <Row key={id}>
+                  <Image src={imageUrl} alt={title} key={id} />
+                  <PriceDetail>
+                    <ProductName>{title}</ProductName>
+                    <ProductPrice>{price}</ProductPrice>
+                  </PriceDetail>
+                  <ProductAmountContainer>
+                    <button onClick={() => minusOne(id)}>-</button>
+                    <ProductAmount>{quantity}</ProductAmount>
+                    <button onClick={() => plusOne(id)}>+</button>
+                  </ProductAmountContainer>
+                  <RemoveButton onClick={() => removeFromCart(id, quantity)}>
+                    <FaRegTrashAlt />
+                  </RemoveButton>
+                </Row>
+              );
+            })
+          ) : (
+            <EmptyItem>Your cart is empty.</EmptyItem>
+          )}
         </Info>
         <Summary>
           <SummaryTitle>ORDER SUMMARY</SummaryTitle>
           <SummaryItem>
             <p>Subtotal</p>
-            <p>$ 80</p>
+            <p>$ {subtotal.toFixed(2)}</p>
           </SummaryItem>
           <SummaryItem>
-            <p>Estimated Shipping</p>
-            <p>$ 5.90</p>
+            <p>Tax(25%)</p>
+            <p>$ {vat.toFixed(2)}</p>
           </SummaryItem>
-          <SummaryItem>
-            <p>Shipping Discount</p>
-            <p>$ -5.90</p>
-          </SummaryItem>
+
           <SummaryItem type="total">
             <p>Total</p>
-            <p>$ {total}</p>
+            <p>$ {total.toFixed(2)}</p>
           </SummaryItem>
           <Button>CHECKOUT NOW</Button>
         </Summary>
