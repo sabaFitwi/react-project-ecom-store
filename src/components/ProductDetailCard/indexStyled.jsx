@@ -86,3 +86,14 @@ export const AddToCartButton = styled.button`
     margin-top: 40px;
   }
 `;
+
+export const Notification = styled.div`
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: green;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 4px;
+`;

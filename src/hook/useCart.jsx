@@ -92,7 +92,6 @@ function useCart() {
   const removeFromCart = useCartStore((state) => state.removeFromCart);
 
   function addToCart(id) {
-    console.log("Add to cart", id);
     addProductToCart(id);
   }
 
