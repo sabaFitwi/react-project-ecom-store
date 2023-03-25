@@ -10,6 +10,7 @@ export const ProductItem = styled.div`
   padding-button: 20px;
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
   border-radius: 5px;
+
   overflow: hidden;
 
   &:hover {
@@ -92,8 +93,9 @@ export const DiscountTag = styled.span`
   font-size: 16px;
   padding: 4px 8px;
   position: absolute;
-  top: 16px;
-  right: 16px;
+  top: 5px;
+  right: 5px;
+  z-index: 1;
 `;
 export const Price = styled.span`
    {

@@ -17,7 +17,7 @@ export const NavigationItem = styled(Link)`
   color: black;
   text-decoration: none;
 
-  ${media.desktop} {
+  ${media.xl}, ${media.lg}, ${media.md} {
     margin: 0.5rem 0;
   }
 `;
@@ -59,7 +59,7 @@ export const MenuIcon = styled.div`
   font-size: 1.5rem;
   cursor: pointer;
 
-  ${media.desktop} {
+  ${media.xl}, ${media.lg} {
     display: block;
   }
 `;
@@ -70,7 +70,7 @@ export const MenuList = styled.div`
   align-items: center;
   justify-content: center;
 
-  ${media.mobile} {
+  ${media.md}, ${media.sm},${media.xs} {
     display: ${({ open }) => (open ? "flex" : "none")};
     flex-direction: column;
     position: absolute;

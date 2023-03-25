@@ -2,12 +2,15 @@ import styled from "styled-components";
 import { media } from "../../styles/media";
 
 export const ProductDetailContainer = styled.div`
-  display: grid;
-  grid-template-rows: 1fr, 1fr;
+  display: flex;
+
   margin: 1rem;
   padding: 1rem;
   border: 1px solid #ccc;
   border-radius: 0.5rem;
+  ${media.md} {
+    flex-direction: column;
+  }
 `;
 
 export const ProductImage = styled.img`
@@ -16,7 +19,7 @@ export const ProductImage = styled.img`
   margin-right: 1rem;
   object-fit: contain;
 
-  ${media.mobile} {
+  ${media.xs} {
     width: 100%;
     margin-right: 0;
     margin-bottom: 1rem;
@@ -30,7 +33,7 @@ export const ProductInfoContainer = styled.div`
   margin-left: 1rem;
   flex-grow: 1;
 
-  ${media.mobile} {
+  ${media.xs} {
     margin-left: 0;
   }
 `;
@@ -38,7 +41,7 @@ export const ProductInfoContainer = styled.div`
 export const ProductTitle = styled.h2`
   font-size: 1.5rem;
 
-  ${media.mobile} {
+  ${media.xs} {
     font-size: 1.25rem;
   }
 `;
@@ -46,7 +49,7 @@ export const ProductTitle = styled.h2`
 export const ProductDescription = styled.p`
   font-size: 1rem;
 
-  ${media.mobile} {
+  ${media.xs} {
     font-size: 0.875rem;
   }
 `;
@@ -54,7 +57,7 @@ export const ProductDescription = styled.p`
 export const ProductRating = styled.p`
   font-size: 1rem;
 
-  ${media.mobile} {
+  ${media.xs} {
     font-size: 0.875rem;
   }
 `;
@@ -63,7 +66,7 @@ export const ProductPrice = styled.p`
   font-size: 1.5rem;
   font-weight: bold;
 
-  ${media.mobile} {
+  ${media.xs} {
     font-size: 1.25rem;
   }
 `;
@@ -82,7 +85,7 @@ export const AddToCartButton = styled.button`
     background-color: #1a237e;
   }
 
-  ${media.mobile} {
+  ${media.xs} {
     margin-top: 40px;
   }
 `;

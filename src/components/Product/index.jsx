@@ -24,12 +24,12 @@ function Product(props) {
         <S.DiscountTag>{discountPercentage}% off</S.DiscountTag>
       )}
       <S.ProductImageWrapper>
-        <S.ViewButtonOverlay>
-          <S.ViewButton>View</S.ViewButton>
-        </S.ViewButtonOverlay>
         <Link to={`../../ProductDetail/${id}`}>
-          <S.ProductImage src={imageUrl} alt={title} />
+          <S.ViewButtonOverlay>
+            <S.ViewButton>View</S.ViewButton>
+          </S.ViewButtonOverlay>
         </Link>
+        <S.ProductImage src={imageUrl} alt={title} />
       </S.ProductImageWrapper>
       <h3>{title}</h3>
       <p>

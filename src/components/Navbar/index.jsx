@@ -2,15 +2,7 @@ import React, { useState } from "react";
 import { GiShoppingBag } from "react-icons/gi";
 //import { useLocation } from "react-router-dom";
 
-import {
-  NavigationBar,
-  NavigationItem,
-  ShoppingCartIcon,
-  ShoppingBag,
-  CartCount,
-  MenuIcon,
-  MenuList,
-} from "./NavbarStyle";
+import * as S from "./indexStyle";
 //import SearchBar from "../Search";
 
 const Nav = ({ cartCount }) => {
@@ -22,31 +14,31 @@ const Nav = ({ cartCount }) => {
   };
 
   return (
-    <NavigationBar>
-      <MenuIcon onClick={toggleMenu}>&#9776;</MenuIcon>
+    <S.NavigationBar>
+      <S.MenuIcon onClick={toggleMenu}>&#9776;</S.MenuIcon>
 
-      <MenuList open={isOpen}>
-        <NavigationItem to="/" onClick={toggleMenu}>
+      <S.MenuList open={isOpen}>
+        <S.NavigationItem to="/" onClick={toggleMenu}>
           <li> Home</li>
-        </NavigationItem>
-        <NavigationItem to="/contact" onClick={toggleMenu}>
+        </S.NavigationItem>
+        <S.NavigationItem to="/contact" onClick={toggleMenu}>
           Contact
-        </NavigationItem>
-        <NavigationItem to="/about" onClick={toggleMenu}>
+        </S.NavigationItem>
+        <S.NavigationItem to="/about" onClick={toggleMenu}>
           About
-        </NavigationItem>
-        <NavigationItem to="/products" onClick={toggleMenu}>
+        </S.NavigationItem>
+        <S.NavigationItem to="/products" onClick={toggleMenu}>
           Product List
-        </NavigationItem>
-      </MenuList>
+        </S.NavigationItem>
+      </S.MenuList>
 
-      <ShoppingCartIcon to="/cart">
-        <ShoppingBag>
+      <S.ShoppingCartIcon to="/cart">
+        <S.ShoppingBag>
           <GiShoppingBag />
-        </ShoppingBag>
-        {cartCount > 0 && <CartCount>{cartCount}</CartCount>}
-      </ShoppingCartIcon>
-    </NavigationBar>
+        </S.ShoppingBag>
+        {cartCount > 0 && <S.CartCount>{cartCount}</S.CartCount>}
+      </S.ShoppingCartIcon>
+    </S.NavigationBar>
   );
 };
 
