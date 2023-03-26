@@ -1,25 +1,13 @@
-import React from 'react';
-import styled from 'styled-components';
-
-const BannerWrapper = styled.section`
-  background-color: #f2f2f2;
-  padding: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-const BannerText = styled.h1`
-  color: #333;
-  font-size: 2rem;
-  text-align: center;
-`;
+import React from "react";
+import SearchBar from "../Search";
+import * as S from "./indexStyle";
 
 const Banner = () => {
   return (
-    <BannerWrapper>
-      <BannerText>Get 20% off your first order!</BannerText>
-    </BannerWrapper>
+    <S.BannerWrapper>
+      <S.BannerText>Get 20% off your first order!</S.BannerText>
+      <SearchBar />
+    </S.BannerWrapper>
   );
 };
 

@@ -1,5 +1,6 @@
-import styled from 'styled-components';
-import { FaSearch } from 'react-icons/fa';
+import styled from "styled-components";
+import { FaSearch } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 export const SearchBarContainer = styled.div`
   display: flex;
@@ -29,10 +30,10 @@ export const SearchInput = styled.input`
   }
 
   @media (max-width: 768px) {
-    height: ${(props) => (props.isVisible ? '40px' : '0')};
-    visibility: ${(props) => (props.isVisible ? 'visible' : 'hidden')};
-    opacity: ${(props) => (props.isVisible ? '1' : '0')};
-    margin: ${(props) => (props.isVisible ? '5px 0' : '0')};
+    height: ${(props) => (props.isVisible ? "40px" : "0")};
+    visibility: ${(props) => (props.isVisible ? "visible" : "hidden")};
+    opacity: ${(props) => (props.isVisible ? "1" : "0")};
+    margin: ${(props) => (props.isVisible ? "5px 0" : "0")};
   }
 `;
 
@@ -58,6 +59,13 @@ export const SearchDivWrap = styled.div`
   align-items: center;
   padding: 10px;
 `;
+
+export const SearchResultContainer = styled.div`
+  background-color: white;
+  border: 1px solid black;
+  padding: 10px;
+  margin-top: 10px;
+`;
 export const DropdownContainer = styled.div`
   position: absolute;
   top: 100%;
@@ -78,47 +86,16 @@ export const DropdownContainer = styled.div`
   `}
 `;
 
-// export const DropdownItem = styled.div`
-//   padding: 10px;
-//   font-size: 16px;
-//   cursor: pointer;
-//   transition: all 0.3s ease;
-
-//   &:hover {
-//     background-color: #f5f5f5;
-//   }
-// `
-// export const SearchBarContainer1 = styled.div`
-//   position: relative;
-// `;
-
-// export const SearchIcon1 = styled.div`
-//   position: absolute;
-//   top: 50%;
-//   transform: translateY(-50%);
-//   right: 10px;
-//   width: 20px;
-//   height: 20px;
-//   background-image: url('/path/to/search-icon.svg');
-//   background-repeat: no-repeat;
-//   background-size: contain;
-//   cursor: pointer;
-// `;
-
-// export const SearchInput1 = styled.input`
-//   padding: 10px 10px 10px 40px;
-//   width: 100%;
-//   border: none;
-//   border-radius: 5px;
-//   font-size: 16px;
-//   transition: all 0.3s ease;
-
-//   ${({ isVisible }) =>
-//     !isVisible &&
-//     `
-//     height: 0;
-//     padding: 0;
-//     border: none;
-//     overflow: hidden;
-//   `}
-// `;
+export const NoSearchResult = styled.div`
+  font-size: 14px;
+  color: red;
+  margin-top: 10px;
+`;
+export const LinkStyle = styled(Link)`
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  &:hover {
+    color: #333;
+  }
+`;
