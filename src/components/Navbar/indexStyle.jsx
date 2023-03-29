@@ -1,43 +1,38 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { media } from "../../styles/media";
+
 export const NavigationBar = styled.nav`
-  flex: 70%;
   display: flex;
   align-items: center;
   justify-content: right;
-
-  ${media.desktop} {
-    padding: 1rem;
-  }
+  position: relative;
 `;
 
 export const NavigationItem = styled(Link)`
-  margin: 0 1rem;
-  color: black;
+  margin: 0 5px;
+  color: #333;
   text-decoration: none;
 
-  ${media.xl}, ${media.lg}, ${media.md} {
-    margin: 0.5rem 0;
+  ${media.mobile} {
+    margin: 8px 0;
+    color: #fff;
   }
 `;
 
 export const ShoppingCartIcon = styled(Link)`
-  margin: 0 1rem;
-  font-size: 1.5rem;
+  padding: 0 16px;
+  font-size: 24px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
   cursor: pointer;
   position: relative;
-  margin-left: 60px ${media.desktop} {
-    margin: 0.5rem 0;
-  }
+  margin-left: 60px;
 `;
 
 export const CartIcon = styled.span`
-  font-size: 1.2rem;
+  font-size: 19px;
 `;
 export const CartCount = styled.span`
   position: absolute;
@@ -51,34 +46,38 @@ export const CartCount = styled.span`
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.8rem;
+  font-size: 12px;
 `;
 
 export const MenuIcon = styled.div`
   display: none;
-  font-size: 1.5rem;
+  font-size: 24px;
   cursor: pointer;
 
-  ${media.xl}, ${media.lg} {
+  ${media.mobile} {
     display: block;
+    position: relative;
   }
 `;
 
 export const MenuList = styled.div`
   display: flex;
   flex-direction: row;
+  gap: 10px;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 
-  ${media.md}, ${media.sm},${media.xs} {
+  ${media.mobile} {
     display: ${({ open }) => (open ? "flex" : "none")};
+    width: 100%;
     flex-direction: column;
     position: absolute;
     top: 100%;
-    left: 0;
-
+    right: 0;
+    left:0
+    z-index: 1;
     background-color: #333;
-    padding: 0.5rem 1rem;
+    padding: 40px 16px;
   }
 `;
 

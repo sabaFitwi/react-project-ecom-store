@@ -1,23 +1,16 @@
-import styled from 'styled-components';
-import { media } from '../../../styles/media';
+import styled from "styled-components";
 
 export const HeaderWrapper = styled.div`
-  width: 100%;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   justify-content: between;
   align-items: center;
   border-bottom: 1px solid #ddd;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-
-  ${media.desktop} {
-    flex-direction: row;
-  }
+  height: auto;
+  padding: 20px;
 `;
 export const Logo = styled.img`
   height: 70px;
   padding-left: 10px;
-
-  ${media.desktop} {
-    margin-bottom: 0.5rem;
-  }
 `;

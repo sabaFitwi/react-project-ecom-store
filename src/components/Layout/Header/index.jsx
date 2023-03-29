@@ -1,6 +1,6 @@
 import React from "react";
 import Nav from "../../Navbar";
-import { HeaderWrapper, Logo } from "./HeaderStyle";
+import { HeaderWrapper, Logo } from "./indexStyles";
 import logo from "../../../assets/logo.png";
 import { useCart } from "../../../hook/useCart";
 

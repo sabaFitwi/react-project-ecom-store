@@ -1,16 +1,16 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-
 import Header from "./Header";
 import Footer from "./Footer";
+import { Content } from "./indexStyles";
 
 function Layout() {
   return (
-    <div>
+    <Content>
       <Header />
       <Outlet />
       <Footer />
-    </div>
+    </Content>
   );
 }
 export default Layout;

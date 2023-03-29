@@ -1,10 +1,11 @@
 import React from "react";
-import { FooterContainer } from "./FooterStyle";
+import { FooterContainer } from "./indexStyles";
 
 const Footer = () => {
   return (
     <FooterContainer>
-      <p>&copy; 2023 My Awesome Website</p>
+      <p>&copy; 2023 React Project</p>
+      <p>Github</p>
     </FooterContainer>
   );
 };

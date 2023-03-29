@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { media } from "../../styles/media";
 
 export const SearchBarContainer = styled.div`
   display: flex;
@@ -29,7 +30,7 @@ export const SearchInput = styled.input`
     outline: none;
   }
 
-  @media (max-width: 768px) {
+  ${media.tablet} {
     height: ${(props) => (props.isVisible ? "40px" : "0")};
     visibility: ${(props) => (props.isVisible ? "visible" : "hidden")};
     opacity: ${(props) => (props.isVisible ? "1" : "0")};

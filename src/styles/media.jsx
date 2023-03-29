@@ -1,10 +1,16 @@
-export const media1 = {
+export const media = {
   desktop: `@media screen and (max-width: 960px)`,
-  laptop: `@media screen and (max-width: 768px)`,
+  tablet: `@media screen and (max-width: 768px)`,
   mobile: `@media screen and (max-width:480px)`,
 };
+// export const media = {
+//   desktop: `@media screen and (min-width: 1200px)`,
+//   tablet: `@media screen and (min-width: 768px)and (max-width: 1199px)`,
+//   mobile: `@media screen and (max-width:767px)`,
 
-export const media = {
+// };
+
+export const media1 = {
   xl: `@media screen and (min-width: 1200px)`,
   lg: `@media screen and (min-width: 992px) and (max-width: 1199px)`,
   md: `@media screen and (min-width: 768px) and (max-width: 991px)`,

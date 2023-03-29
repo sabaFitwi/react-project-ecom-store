@@ -1,18 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
   FormWrapper,
   InputLabel,
   Input,
   Textarea,
   Button,
-} from './ContactStyle';
+} from "./indexStyles";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    subject: '',
-    email: '',
-    body: '',
+    name: "",
+    subject: "",
+    email: "",
+    body: "",
   });
 
   const handleInputChange = (event) => {
@@ -31,7 +31,7 @@ const ContactForm = () => {
   return (
     <FormWrapper onSubmit={handleSubmit}>
       <div>
-        {' '}
+        {" "}
         <InputLabel>Full Name</InputLabel>
         <Input
           type="text"
@@ -45,7 +45,7 @@ const ContactForm = () => {
       </div>
 
       <div>
-        {' '}
+        {" "}
         <InputLabel>Subject</InputLabel>
         <Input
           type="text"
@@ -70,7 +70,7 @@ const ContactForm = () => {
         />
       </div>
       <div>
-        {' '}
+        {" "}
         <InputLabel>Body</InputLabel>
         <Textarea
           name="body"

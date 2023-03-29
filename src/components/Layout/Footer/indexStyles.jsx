@@ -8,9 +8,4 @@ export const FooterContainer = styled.footer`
   flex-direction: column;
   align-items: center;
   text-align: center;
-
-  @media only screen and (min-width: 768px) {
-    flex-direction: row;
-    justify-content: space-between;
-  }
 `;

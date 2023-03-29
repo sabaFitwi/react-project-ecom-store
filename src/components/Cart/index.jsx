@@ -5,27 +5,7 @@ import { useCart } from "../../hook/useCart";
 
 import { FaRegTrashAlt } from "react-icons/fa";
 
-import {
-  Wrapper,
-  Row,
-  RemoveButton,
-  Title,
-  Top,
-  TopButton,
-  Bottom,
-  Info,
-  PriceDetail,
-  Image,
-  ProductName,
-  ProductAmountContainer,
-  ProductAmount,
-  ProductPrice,
-  Summary,
-  SummaryItem,
-  SummaryTitle,
-  Button,
-  EmptyItem,
-} from "./indexStyle";
+import * as C from "./indexStyle";
 
 const CartBag = () => {
   const {
@@ -64,16 +44,15 @@ const CartBag = () => {
   const total = subtotal + vat;
 
   return (
-    <Wrapper>
-      <Title>YOUR BAG</Title>
-      <Top>
-        <Link to={`/`}>
-          <TopButton>CONTINUE SHOPPING</TopButton>
-        </Link>
-        <TopButton type="filled">CHECKOUT NOW</TopButton>
-      </Top>
-      <Bottom>
-        <Info>
+    <C.Wrapper>
+      <C.Title>YOUR BAG</C.Title>
+
+      <Link to={`/`}>
+        <C.TopButton>CONTINUE SHOPPING</C.TopButton>
+      </Link>
+
+      <C.BottomSection>
+        <div>
           {cart.length > 0 ? (
             cart.map((item) => {
               const { id, quantity } = item;
@@ -86,46 +65,50 @@ const CartBag = () => {
               const { title, price, imageUrl } = product;
 
               return (
-                <Row key={id}>
-                  <Image src={imageUrl} alt={title} key={id} />
-                  <PriceDetail>
-                    <ProductName>{title}</ProductName>
-                    <ProductPrice>{price}</ProductPrice>
-                  </PriceDetail>
-                  <ProductAmountContainer>
-                    <button onClick={() => minusOne(id)}>-</button>
-                    <ProductAmount>{quantity}</ProductAmount>
-                    <button onClick={() => plusOne(id)}>+</button>
-                  </ProductAmountContainer>
-                  <RemoveButton onClick={() => removeFromCart(id, quantity)}>
-                    <FaRegTrashAlt />
-                  </RemoveButton>
-                </Row>
+                <C.Row key={id}>
+                  <C.Image src={imageUrl} alt={title} key={id} />
+                  <C.PriceQtyWrapper>
+                    <C.ProductDetail>
+                      <C.ProductName>{title}</C.ProductName>
+                      <C.ProductPrice>{price}</C.ProductPrice>
+                    </C.ProductDetail>
+                    <C.ProductAmountContainer>
+                      <button onClick={() => minusOne(id)}>-</button>
+                      <C.ProductAmount>{quantity}</C.ProductAmount>
+                      <button onClick={() => plusOne(id)}>+</button>
+                    </C.ProductAmountContainer>
+                    <C.RemoveButton
+                      onClick={() => removeFromCart(id, quantity)}
+                    >
+                      <FaRegTrashAlt />
+                    </C.RemoveButton>
+                  </C.PriceQtyWrapper>
+                </C.Row>
               );
             })
           ) : (
-            <EmptyItem>Your cart is empty.</EmptyItem>
+            <C.EmptyItem>Your cart is empty.</C.EmptyItem>
           )}
-        </Info>
-        <Summary>
-          <SummaryTitle>ORDER SUMMARY</SummaryTitle>
-          <SummaryItem>
+        </div>
+        <C.Summary>
+          <C.SummaryTitle>ORDER SUMMARY</C.SummaryTitle>
+          <C.SummaryItem>
             <p>Subtotal</p>
             <p>$ {subtotal.toFixed(2)}</p>
-          </SummaryItem>
-          <SummaryItem>
+          </C.SummaryItem>
+          <C.SummaryItem>
             <p>Tax(25%)</p>
             <p>$ {vat.toFixed(2)}</p>
-          </SummaryItem>
+          </C.SummaryItem>
 
-          <SummaryItem type="total">
+          <C.SummaryItem type="total">
             <p>Total</p>
             <p>$ {total.toFixed(2)}</p>
-          </SummaryItem>
-          <Button>CHECKOUT NOW</Button>
-        </Summary>
-      </Bottom>
-    </Wrapper>
+          </C.SummaryItem>
+          <C.Button>CHECKOUT NOW</C.Button>
+        </C.Summary>
+      </C.BottomSection>
+    </C.Wrapper>
   );
 };
 

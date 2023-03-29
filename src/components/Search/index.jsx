@@ -41,7 +41,7 @@ const SearchBar = () => {
                 <S.SearchDivWrap key={result.id}>
                   <S.SearchImg src={result.imageUrl} alt={result.title} />
                   <div>{result.title}</div>
-                </S.SearchDivWrap>{" "}
+                </S.SearchDivWrap>
               </S.LinkStyle>
             ))
           ) : (

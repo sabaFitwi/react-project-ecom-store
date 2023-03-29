@@ -19,16 +19,10 @@ const Nav = ({ cartCount }) => {
 
       <S.MenuList open={isOpen}>
         <S.NavigationItem to="/" onClick={toggleMenu}>
-          <li> Home</li>
+          Home
         </S.NavigationItem>
         <S.NavigationItem to="/contact" onClick={toggleMenu}>
           Contact
-        </S.NavigationItem>
-        <S.NavigationItem to="/about" onClick={toggleMenu}>
-          About
-        </S.NavigationItem>
-        <S.NavigationItem to="/products" onClick={toggleMenu}>
-          Product List
         </S.NavigationItem>
       </S.MenuList>
 

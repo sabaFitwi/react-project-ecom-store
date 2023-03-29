@@ -1,15 +1,26 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  width: 90%;
   margin: auto;
+  padding: 10px;
 `;
-
-export const Row = styled.div`
+export const PriceQtyWrapper = styled.div`
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  gap: 30px;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+  }
+`;
+export const Row = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+
+  align-items: start;
   justify-content: space-between;
-  padding: 16px;
+  padding: 16px 0;
   border-bottom: 1px solid #ddd;
 `;
 
@@ -25,13 +36,6 @@ export const Title = styled.h1`
   text-align: center;
 `;
 
-export const Top = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px;
-`;
-
 export const TopButton = styled.button`
   padding: 10px;
   font-weight: 600;
@@ -42,20 +46,16 @@ export const TopButton = styled.button`
   color: ${(props) => props.type === "filled" && "white"};
 `;
 
-export const Bottom = styled.div`
+export const BottomSection = styled.div`
   display: grid;
-  grid-template-columns: 3fr 1fr;
-  gap: 10px;
+  grid-template-columns: 3fr 2fr;
+  gap: 30px;
   justify-content: space-between;
-`;
 
-export const Info = styled.div`
-  flex: 4;
-`;
-
-export const ProductDetail = styled.div`
-  flex: 2;
-  display: flex;
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    padding: 8px;
+  }
 `;
 
 export const Image = styled.img`
@@ -65,12 +65,19 @@ export const Image = styled.img`
   margin: 10px;
 `;
 
-export const ProductName = styled.span``;
+export const ProductName = styled.p`
+  font-size: 18px;
+  margin-top: 0;
 
-export const PriceDetail = styled.div`
+  @media (max-width: 468px) {
+    font-size: 15px;
+  }
+`;
+
+export const ProductDetail = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
 `;
 
@@ -81,13 +88,14 @@ export const ProductAmountContainer = styled.div`
 `;
 
 export const ProductAmount = styled.div`
-  font-size: 24px;
-  margin: 5px;
+  font-size: 20px;
+  margin: 0 5px;
 `;
 
-export const ProductPrice = styled.div`
-  font-size: 20px;
+export const ProductPrice = styled.p`
+  font-size: 15px;
   font-weight: 200;
+  margin-top: 0;
 `;
 
 export const Summary = styled.div`
@@ -101,6 +109,7 @@ export const Summary = styled.div`
 `;
 
 export const SummaryTitle = styled.h2`
+  font-size: 20px;
   font-weight: 200;
 `;
 
