@@ -28,7 +28,7 @@ const CartBag = () => {
   }
 
   if (hasErrors) {
-    return <div>Error is occering do some thing</div>;
+    return <div>Error is occurring do some thing</div>;
   }
   /**
    * calculating the total price
@@ -62,7 +62,7 @@ const CartBag = () => {
               if (!product) {
                 return null;
               }
-              const { title, price, imageUrl } = product;
+              const { title, discountedPrice, imageUrl } = product;
 
               return (
                 <C.Row key={id}>
@@ -70,7 +70,7 @@ const CartBag = () => {
                   <C.PriceQtyWrapper>
                     <C.ProductDetail>
                       <C.ProductName>{title}</C.ProductName>
-                      <C.ProductPrice>{price}</C.ProductPrice>
+                      <C.ProductPrice>{discountedPrice}</C.ProductPrice>
                     </C.ProductDetail>
                     <C.ProductAmountContainer>
                       <button onClick={() => minusOne(id)}>-</button>

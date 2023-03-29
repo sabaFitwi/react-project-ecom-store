@@ -8,4 +8,5 @@ export const FooterContainer = styled.footer`
   flex-direction: column;
   align-items: center;
   text-align: center;
+  margin-top: 160px;
 `;

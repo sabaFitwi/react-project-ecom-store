@@ -2,15 +2,16 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import * as S from "./indexStyled";
 import { ProductUrl as url } from "../../utility/Constants";
-//import { useCart } from "../../hook/useCart";
+import { useCart } from "../../hook/useCart";
 
 export default function ProductDetailCard() {
   const [product, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
+  const [isAdded, setIsAdded] = useState(false);
 
   const { id } = useParams();
-
+  const { addToCart } = useCart();
   useEffect(() => {
     async function getData() {
       try {
@@ -39,8 +40,10 @@ export default function ProductDetailCard() {
     return <div>Error is occering do some thing</div>;
   }
 
-  function onAddTOCartClick() {
-    console.log(id);
+  function onAddToCartClick() {
+    addToCart(id);
+    setIsAdded(true);
+    setTimeout(() => setIsAdded(false), 2000);
   }
   {
     const { title, description, rating, price, imageUrl } = product;
@@ -51,10 +54,10 @@ export default function ProductDetailCard() {
         <S.ProductInfoContainer>
           <S.ProductTitle>{title}</S.ProductTitle>
           <S.ProductDescription>{description}</S.ProductDescription>
-          <S.ProductRating>{rating} out of 5 stars</S.ProductRating>
           <S.ProductPrice>${price}</S.ProductPrice>
-          <S.AddToCartButton onClick={onAddTOCartClick}>
-            Add to Cart
+          <S.ProductRating>{rating} out of 5 stars</S.ProductRating>
+          <S.AddToCartButton added={isAdded} onClick={onAddToCartClick}>
+            {isAdded ? "Item Added to cart!" : "Add to cart"}
           </S.AddToCartButton>
         </S.ProductInfoContainer>
       </S.ProductDetailContainer>

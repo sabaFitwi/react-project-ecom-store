@@ -21,7 +21,7 @@ export const NavigationItem = styled(Link)`
 `;
 
 export const ShoppingCartIcon = styled(Link)`
-  padding: 0 16px;
+  padding: 0 8px;
   font-size: 24px;
   display: inline-flex;
   align-items: center;

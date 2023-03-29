@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
   margin: auto;
   padding: 10px;
+  position: relative;
 `;
 export const PriceQtyWrapper = styled.div`
   display: flex;
@@ -64,6 +65,25 @@ export const Image = styled.img`
   object-fit: cover;
   margin: 10px;
 `;
+// export const Image = styled.img`
+//   width: 150px;
+//   height: 150px;
+//   object-fit: cover;
+//   margin: 10px;
+//   position: relative;
+//   &:before {
+//     content: "DISCOUNT";
+//     position: absolute;
+//     top: -20px;
+//     left: -40px;
+//     background-color: red;
+//     color: white;
+//     padding: 5px;
+//     transform: rotate(-45deg);
+//     font-size: 14px;
+//     font-weight: bold;
+//   }
+// `;
 
 export const ProductName = styled.p`
   font-size: 18px;
@@ -106,11 +126,15 @@ export const Summary = styled.div`
   height: 100vh;
   position: sticky;
   top: 0;
+  @media (max-width: 768px) {
+    height: auto;
+  }
 `;
 
 export const SummaryTitle = styled.h2`
   font-size: 20px;
-  font-weight: 200;
+  font-weight: 400;
+  text-align: center;
 `;
 
 export const SummaryItem = styled.div`

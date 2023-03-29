@@ -43,7 +43,7 @@ function Product(props) {
         )}
       </p>
       <S.AddToCartButton added={isAdded} onClick={onAddToCartClick}>
-        {isAdded ? "added to cart!" : "Add to cart"}
+        {isAdded ? "Item Added to cart!" : "Add to cart"}
       </S.AddToCartButton>
     </S.ProductItem>
   );

@@ -2,27 +2,38 @@ import styled from "styled-components";
 import { media } from "../../styles/media";
 
 export const ProductDetailContainer = styled.div`
-  display: flex;
-
-  margin: 1rem;
-  padding: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 16px;
+  padding: 16px;
   border: 1px solid #ccc;
-  border-radius: 0.5rem;
-  ${media.md} {
-    flex-direction: column;
+  border-radius: 8px;
+  ${media.tablet} {
+    gap: 20px;
+  }
+
+  ${media.mobile} {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    gap: 16px;
+    margin: 8px;
   }
 `;
 
 export const ProductImage = styled.img`
-  width: 50%;
+  width: 100%;
   height: 450px;
-  margin-right: 1rem;
-  object-fit: contain;
+  margin-right: 16px;
+  object-fit: cover;
 
-  ${media.xs} {
-    width: 100%;
+  ${media.tablet} {
+    height: 300px;
     margin-right: 0;
-    margin-bottom: 1rem;
+    margin-bottom: 16px;
+  }
+
+  ${media.mobile} {
+    height: 450px;
   }
 `;
 
@@ -30,62 +41,59 @@ export const ProductInfoContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-left: 1rem;
+  margin-left: 16px;
   flex-grow: 1;
 
-  ${media.xs} {
+  ${media.tablet} {
     margin-left: 0;
   }
 `;
 
-export const ProductTitle = styled.h2`
-  font-size: 1.5rem;
+export const ProductTitle = styled.h1`
+  font-size: 24px;
 
-  ${media.xs} {
-    font-size: 1.25rem;
+  ${media.tablet} {
+    font-size: 20px;
   }
 `;
 
 export const ProductDescription = styled.p`
-  font-size: 1rem;
-
-  ${media.xs} {
-    font-size: 0.875rem;
+  font-size: 18px;
+  margin-top: 0;
+  ${media.tablet} {
+    font-size: 16px;
   }
 `;
 
 export const ProductRating = styled.p`
-  font-size: 1rem;
-
-  ${media.xs} {
-    font-size: 0.875rem;
+  font-size: 16px;
+  margin: 0;
+  ${media.tablet} {
+    font-size: 14px;
   }
 `;
 
 export const ProductPrice = styled.p`
-  font-size: 1.5rem;
+  font-size: 24px;
   font-weight: bold;
+  margin-bottom: 0;
 
-  ${media.xs} {
-    font-size: 1.25rem;
+  ${media.tablet} {
+    font-size: 20px;
   }
 `;
 
 export const AddToCartButton = styled.button`
-  background-color: #007bff;
+  background-color: #333;
   color: #fff;
   border: none;
-  border-radius: 0.25rem;
-  padding: 0.5rem;
-  font-size: 1rem;
+  border-radius: 4px;
+  padding: 8px;
+  font-size: 16px;
   cursor: pointer;
-  margin-top: 1rem;
+  margin-top: 16px;
 
-  &:hover {
-    background-color: #1a237e;
-  }
-
-  ${media.xs} {
+  ${media.tablet} {
     margin-top: 40px;
   }
 `;
@@ -99,4 +107,8 @@ export const Notification = styled.div`
   color: white;
   padding: 8px 16px;
   border-radius: 4px;
+
+  ${media.tablet} {
+    top: 0;
+  }
 `;
