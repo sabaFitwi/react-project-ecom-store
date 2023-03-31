@@ -8,7 +8,7 @@ import RouteNotFound from "./pages/RouteNotFound";
 import Layout from "./components/Layout";
 import Cart from "./pages/Cart";
 import Contact from "./pages/Contact";
-import CheckoutSuccess from "./pages/Checkout";
+import CheckoutSuccess from "./pages/CheckoutSuccess";
 
 function App() {
   return (

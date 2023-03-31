@@ -1,21 +1,5 @@
-import React, { useEffect } from "react";
 import styled from "styled-components";
-
-const CheckoutSuccess = ({ clearCart }) => {
-  // clear cart when component mounts
-  useEffect(() => {
-    clearCart();
-  }, [clearCart]);
-
-  return (
-    <Container>
-      <SuccessMessage>Your order was successful!</SuccessMessage>
-      <BackToStoreLink href="/">Go back to store</BackToStoreLink>
-    </Container>
-  );
-};
-
-const Container = styled.div`
+export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -25,7 +9,7 @@ const Container = styled.div`
   }
 `;
 
-const SuccessMessage = styled.h1`
+export const SuccessMessage = styled.h1`
   font-size: 2rem;
   margin-bottom: 20px;
   @media (max-width: 768px) {
@@ -33,7 +17,7 @@ const SuccessMessage = styled.h1`
   }
 `;
 
-const BackToStoreLink = styled.a`
+export const BackToStoreLink = styled.a`
   font-size: 1.2rem;
   text-decoration: none;
   color: #ffffff;
@@ -48,5 +32,3 @@ const BackToStoreLink = styled.a`
     padding: 5px 10px;
   }
 `;
-
-export default CheckoutSuccess;

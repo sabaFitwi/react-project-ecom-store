@@ -100,12 +100,13 @@ const CartBag = () => {
             <p>Tax(25%)</p>
             <p>$ {vat.toFixed(2)}</p>
           </C.SummaryItem>
-
           <C.SummaryItem type="total">
             <p>Total</p>
             <p>$ {total.toFixed(2)}</p>
-          </C.SummaryItem>
-          <C.Button>CHECKOUT NOW</C.Button>
+          </C.SummaryItem>{" "}
+          <Link to={`/checkoutSuccess`}>
+            <C.Button>CHECKOUT NOW</C.Button>
+          </Link>
         </C.Summary>
       </C.BottomSection>
     </C.Wrapper>
