@@ -1,11 +1,5 @@
 import React, { useState } from "react";
-import {
-  FormWrapper,
-  InputLabel,
-  Input,
-  Textarea,
-  Button,
-} from "./indexStyles";
+import * as F from "./indexStyles";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -24,66 +18,67 @@ const ContactForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Here you can submit the form data to your backend or do any other action you need
+
     console.log(formData);
   };
 
   return (
-    <FormWrapper onSubmit={handleSubmit}>
-      <div>
-        {" "}
-        <InputLabel>Full Name</InputLabel>
-        <Input
-          type="text"
-          name="name"
-          placeholder="Enter your full name"
-          minLength="3"
-          required
-          value={formData.name}
-          onChange={handleInputChange}
-        />
-      </div>
+    <>
+      <h1>Contact</h1>
 
-      <div>
-        {" "}
-        <InputLabel>Subject</InputLabel>
-        <Input
-          type="text"
-          name="subject"
-          placeholder="Enter the subject"
-          minLength="3"
-          required
-          value={formData.subject}
-          onChange={handleInputChange}
-        />
-      </div>
+      <F.FormWrapper onSubmit={handleSubmit}>
+        <F.InputWrapper>
+          <F.InputLabel>Full Name</F.InputLabel>
+          <F.Input
+            type="text"
+            name="name"
+            placeholder="Enter your full name"
+            minLength="3"
+            required
+            value={formData.name}
+            onChange={handleInputChange}
+          />
+        </F.InputWrapper>
 
-      <div>
-        <InputLabel>Email</InputLabel>
-        <Input
-          type="email"
-          name="email"
-          placeholder="Enter your email address"
-          required
-          value={formData.email}
-          onChange={handleInputChange}
-        />
-      </div>
-      <div>
-        {" "}
-        <InputLabel>Body</InputLabel>
-        <Textarea
-          name="body"
-          placeholder="Enter your message"
-          minLength="3"
-          required
-          value={formData.body}
-          onChange={handleInputChange}
-        />
-      </div>
+        <F.InputWrapper>
+          <F.InputLabel>Subject</F.InputLabel>
+          <F.Input
+            type="text"
+            name="subject"
+            placeholder="Enter the subject"
+            minLength="3"
+            required
+            value={formData.subject}
+            onChange={handleInputChange}
+          />
+        </F.InputWrapper>
 
-      <Button type="submit">Submit</Button>
-    </FormWrapper>
+        <F.InputWrapper>
+          <F.InputLabel>Email</F.InputLabel>
+          <F.Input
+            type="email"
+            name="email"
+            placeholder="Enter your email address"
+            required
+            value={formData.email}
+            onChange={handleInputChange}
+          />
+        </F.InputWrapper>
+        <F.InputWrapper>
+          <F.InputLabel>Body</F.InputLabel>
+          <F.Textarea
+            name="body"
+            placeholder="Enter your message"
+            minLength="3"
+            required
+            value={formData.body}
+            onChange={handleInputChange}
+          />
+        </F.InputWrapper>
+
+        <F.Button type="submit">Submit</F.Button>
+      </F.FormWrapper>
+    </>
   );
 };
 

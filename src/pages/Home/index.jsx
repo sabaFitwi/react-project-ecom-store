@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import Banner from "../../components/Banner";
-//import CartBag from "../../components/Cart";
 
 import ProductList from "../../components/ProductListCard";
 
 function Home() {
+  useEffect(() => {
+    document.title = "Ecom | Home";
+  }, []);
   return (
     <div>
       <Banner />

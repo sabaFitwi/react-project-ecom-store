@@ -18,7 +18,7 @@ function ProductList() {
   }
 
   if (hasErrors) {
-    return <div>Error is occuring do some thing</div>;
+    return <div>Error is occurring do some thing</div>;
   }
 
   return (

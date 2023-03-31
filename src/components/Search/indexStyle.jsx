@@ -11,7 +11,7 @@ export const SearchBarContainer = styled.div`
   border-radius: 5px;
   padding: 5px;
 
-  @media (max-width: 768px) {
+  ${media.tablet} {
     flex-direction: row;
     align-items: stretch;
     padding: 10px;
@@ -19,7 +19,7 @@ export const SearchBarContainer = styled.div`
 `;
 
 export const SearchInput = styled.input`
-  border: 1px solid lightgrey;
+  border: none;
   background-color: transparent;
   font-size: 16px;
   width: 100%;
@@ -29,13 +29,6 @@ export const SearchInput = styled.input`
   &:focus {
     outline: none;
   }
-
-  ${media.tablet} {
-    height: ${(props) => (props.isVisible ? "40px" : "0")};
-    visibility: ${(props) => (props.isVisible ? "visible" : "hidden")};
-    opacity: ${(props) => (props.isVisible ? "1" : "0")};
-    margin: ${(props) => (props.isVisible ? "5px 0" : "0")};
-  }
 `;
 
 export const SearchIcon = styled(FaSearch)`
@@ -44,10 +37,6 @@ export const SearchIcon = styled(FaSearch)`
   fill: #333;
   margin-right: 5px;
   cursor: pointer;
-
-  @media (min-width: 769px) {
-    display: none;
-  }
 `;
 export const SearchImg = styled.img`
   width: 30px;

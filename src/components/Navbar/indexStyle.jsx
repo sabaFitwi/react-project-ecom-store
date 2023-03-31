@@ -13,10 +13,17 @@ export const NavigationItem = styled(Link)`
   margin: 0 5px;
   color: #333;
   text-decoration: none;
+  &:hover {
+    color: yellow;
+  }
+  &.active {
+    background-color: red;
+  }
 
   ${media.mobile} {
     margin: 8px 0;
     color: #fff;
+    z-index: 1;
   }
 `;
 
@@ -29,6 +36,10 @@ export const ShoppingCartIcon = styled(Link)`
   cursor: pointer;
   position: relative;
   margin-left: 60px;
+
+  ${media.mobile} {
+    margin-left: 8px;
+  }
 `;
 
 export const CartIcon = styled.span`
@@ -69,8 +80,8 @@ export const MenuList = styled.div`
 
   ${media.mobile} {
     display: ${({ open }) => (open ? "flex" : "none")};
-    width: 100%;
     flex-direction: column;
+    width: 100%;
     position: absolute;
     top: 100%;
     right: 0;

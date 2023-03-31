@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import { media } from "./media";
 
 const GlobalStyle = createGlobalStyle`
  html 
@@ -22,9 +23,29 @@ body
     padding:0;
     background-color:#f2f2f2
 } 
+p{
+    font-size:20px
+    
+${media.tablet}{
+    font-size: 18px; 
+};
+${media.mobile}{
+    font-size: 16px; 
+}
+}
 h1
 {
-    justify-content: center;}
+    font-size: 30px;
+    font-weight: 500;
+    text-align:center;
+
+${media.tablet}{
+    font-size: 25px; 
+};
+${media.mobile}{
+    font-size: 20px; 
+}
+}
 `;
 
 export default GlobalStyle;
