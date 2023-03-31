@@ -11,6 +11,7 @@ export const HeaderWrapper = styled.div`
   padding: 20px;
 `;
 export const Logo = styled.img`
-  height: 70px;
+  width: 300px;
+  height: auto;
   padding-left: 10px;
 `;
