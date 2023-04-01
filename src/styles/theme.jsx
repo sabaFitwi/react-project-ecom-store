@@ -1,18 +1,15 @@
-import React from 'react';
-import { ThemeProvider } from 'styled-components';
+import React from "react";
+import { ThemeProvider } from "styled-components";
 
 const theme = {
   color: {
-    primary: 'var(--color-primary)',
-    secondary: 'var(--color-secondary)',
-    light: 'var(--color-light)',
-    text: 'var(--color-text)',
-    textDark: 'var(--color-textDark)',
-    bgDefault: 'var(--color-bgDefault)',
-    bgPrimary: 'var(--color-bgPrimary)',
-    bgSecondary: 'var(--color-bgSecondary)',
-    bgLight: 'var(--color-bgLight)',
-    hoverColor: 'var(--color-hoverColor)',
+    primary: "#333",
+    button: "#4a4325",
+    lightgray: "lightgray",
+    green: "#3cb371",
+    default: "#fff",
+    pink: "pink",
+    red: "#ff0000",
   },
 };
 

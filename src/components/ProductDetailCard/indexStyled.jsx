@@ -6,7 +6,7 @@ export const ProductDetailContainer = styled.div`
   grid-template-columns: 1fr 1fr;
   margin: 16px;
   padding: 16px;
-  border: 1px solid #ccc;
+  border: 1px solid ${({ theme }) => theme.color.lightgray};
   border-radius: 8px;
   ${media.tablet} {
     gap: 20px;
@@ -43,7 +43,7 @@ export const ProductInfoContainer = styled.div`
   justify-content: space-around;
   margin-left: 16px;
   flex-grow: 1;
-  background: white;
+  background: ${({ theme }) => theme.color.default};
 
   ${media.tablet} {
     margin-left: 0;
@@ -75,29 +75,31 @@ export const ProductRating = styled.p`
   }
 `;
 
-export const ProductPrice = styled.h2`
-  font-size: 24px;
-  font-weight: 300;
+export const ProductPrice = styled.p`
   margin-bottom: 0;
-
-  ${media.tablet} {
-    font-size: 20px;
-  }
+  font-size: 14px;
+  text-decoration: line-through;
+  color: ${({ theme }) => theme.color.red};
+  margin-right: 10px;
 `;
 
 export const AddToCartButton = styled.button`
-  width: 50%;
-  background-color: #333;
-  color: #fff;
-  border: 1px solid lightgrey;
-  border-radius: 4px;
-  padding: 8px;
+  width: 40%;
+  background-color: ${(props) =>
+    props.added
+      ? ({ theme }) => theme.color.green
+      : ({ theme }) => theme.color.button};
+  color: ${({ theme }) => theme.color.default};
+  border: 1px solid ${({ theme }) => theme.color.default};
+  border-radius: 5px;
   font-size: 16px;
+  padding: 10px 30px;
+  margin: 25px;
   cursor: pointer;
-  margin-top: 16px;
+
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
   &:hover {
-    background-color: #fff;
-    color: #333;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.7);
   }
 
   ${media.tablet} {
@@ -105,20 +107,6 @@ export const AddToCartButton = styled.button`
   }
 `;
 
-export const Notification = styled.div`
-  position: absolute;
-  top: -40px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: green;
-  color: white;
-  padding: 8px 16px;
-  border-radius: 4px;
-
-  ${media.tablet} {
-    top: 0;
-  }
-`;
 export const Review = styled.div`
   display: flex;
   flex-direction: row;
@@ -132,9 +120,9 @@ export const ReviewItem = styled.div`
    align-items: start;
    justify-content: center;
   margin-bottom: 20px;
-  border: 1px solid lightgray;
+  border: 1px solid ${({ theme }) => theme.color.lightgray};
   padding 10px;
-  background:white;
+  background:${({ theme }) => theme.color.default};
 `;
 
 export const ReviewContainer = styled.div`
@@ -142,7 +130,7 @@ export const ReviewContainer = styled.div`
   padding: 20px;
 `;
 
-export const ReviewHeader = styled.h3`
+export const ReviewHeader = styled.h2`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -168,11 +156,17 @@ export const ReviewAvatar = styled.div`
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: pink;
+  background-color: ${({ theme }) => theme.color.pink};
   margin-right: 10px;
   display: inline-flex;
   justify-content: center;
   align-items: center;
   font-weight: bold;
   font-size: 14px;
+`;
+export const Price = styled.span``;
+export const DiscountedPrice = styled.span`
+   {
+    font-weight: 600px;
+  }
 `;

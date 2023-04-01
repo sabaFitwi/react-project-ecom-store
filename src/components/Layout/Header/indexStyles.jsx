@@ -6,7 +6,7 @@ export const HeaderWrapper = styled.div`
   grid-template-columns: repeat(2, 1fr);
   justify-content: between;
   align-items: center;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid ${({ theme }) => theme.color.lightgray};
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   height: auto;
   padding: 20px;

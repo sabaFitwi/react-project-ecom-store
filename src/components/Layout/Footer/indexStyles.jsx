@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const FooterContainer = styled.footer`
-  background-color: #333;
-  color: #fff;
+  background-color: ${({ theme }) => theme.color.primary};
+  color: ${({ theme }) => theme.color.default};
   padding: 20px;
   display: flex;
   flex-direction: column;

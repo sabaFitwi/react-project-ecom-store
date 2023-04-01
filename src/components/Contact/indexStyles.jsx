@@ -8,7 +8,7 @@ export const FormWrapper = styled.form`
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  border: 1px solid #ccc;
+  border: 1px solid ${({ theme }) => theme.color.lightgray};
   border-radius: 5%;
   padding: 40px 20px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -34,19 +34,19 @@ export const InputLabel = styled.label`
 export const Input = styled.input`
   width: 80%;
   padding: 8px;
-  border: 1px solid #ccc;
+  border: 1px solid ${({ theme }) => theme.color.lightgray};
   border-radius: 4px;
   margin-bottom: 16px;
 
   &:focus {
     outline: none;
-    border-color: #333;
+    border-color: ${({ theme }) => theme.color.primary};
   }
 `;
 
 export const Textarea = styled.textarea`
   padding: 8px;
-  border: 1px solid #ccc;
+  border: 1px solid ${({ theme }) => theme.color.lightgray};
   border-radius: 4px;
   margin-bottom: 16px;
   width: 100%;
@@ -54,13 +54,13 @@ export const Textarea = styled.textarea`
 
   &:focus {
     outline: none;
-    border-color: blue;
+    border-color: ${({ theme }) => theme.color.primary};
   }
 `;
 
 export const Button = styled.button`
-  background-color: #333;
-  color: white;
+  background-color: ${({ theme }) => theme.color.button};
+  color: ${({ theme }) => theme.color.default};
   font-size: 16px;
   font-weight: bold;
   padding: 8px 16px;
@@ -69,7 +69,7 @@ export const Button = styled.button`
   cursor: pointer;
 
   &:hover {
-    background-color: lightgray;
+    background-color: ${({ theme }) => theme.color.lightgray};
     color: black;
   }
 `;

@@ -11,18 +11,21 @@ export const NavigationBar = styled.nav`
 
 export const NavigationItem = styled(Link)`
   margin: 0 5px;
-  color: #333;
+  color: ${({ theme }) => theme.color.primary};
   text-decoration: none;
+  padding: 5px 15px;
   &:hover {
-    color: yellow;
+    color: ${({ theme }) => theme.color.button};
+    text-decoration: underline;
   }
   &.active {
-    background-color: red;
+    background-color: ${({ theme }) => theme.color.button};
+    color: ${({ theme }) => theme.color.default};
   }
 
   ${media.mobile} {
     margin: 8px 0;
-    color: #fff;
+    color: ${({ theme }) => theme.color.default};
     z-index: 1;
   }
 `;
@@ -49,8 +52,8 @@ export const CartCount = styled.span`
   position: absolute;
   top: -10px;
   right: -10px;
-  background-color: #ff4d4f;
-  color: #fff;
+  background-color: ${({ theme }) => theme.color.red};
+  color: ${({ theme }) => theme.color.default};
   border-radius: 50%;
   height: 20px;
   width: 20px;
@@ -87,7 +90,7 @@ export const MenuList = styled.div`
     right: 0;
     left:0
     z-index: 1;
-    background-color: #333;
+    background-color: ${({ theme }) => theme.color.default};
     padding: 40px 16px;
   }
 `;

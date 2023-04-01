@@ -40,7 +40,15 @@ export default function ProductDetailCard() {
     return <div>Error is occurring do some thing</div>;
   }
 
-  const { title, description, rating, price, imageUrl, reviews } = product;
+  const {
+    title,
+    description,
+    rating,
+    price,
+    imageUrl,
+    reviews,
+    discountedPrice,
+  } = product;
 
   function onAddToCartClick() {
     addToCart(id);
@@ -55,7 +63,17 @@ export default function ProductDetailCard() {
         <S.ProductInfoContainer>
           <S.ProductTitle>{title}</S.ProductTitle>
           <S.ProductDescription>{description}</S.ProductDescription>
-          <S.ProductPrice>${price}</S.ProductPrice>
+          <p>
+            {discountedPrice < price ? (
+              <>
+                <S.ProductPrice>${price}</S.ProductPrice>
+                <S.DiscountedPrice>${discountedPrice}</S.DiscountedPrice>
+              </>
+            ) : (
+              `$${price}`
+            )}
+          </p>
+
           <S.ProductRating>
             {createStars(rating)}({rating})
             {reviews && reviews.length > 0 && (

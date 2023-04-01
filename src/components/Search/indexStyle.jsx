@@ -6,8 +6,7 @@ import { media } from "../../styles/media";
 export const SearchBarContainer = styled.div`
   display: flex;
   align-items: center;
-  background-color: #f1f1f1;
-
+  background-color: ${({ theme }) => theme.color.default};
   border-radius: 5px;
   padding: 5px;
 
@@ -34,7 +33,7 @@ export const SearchInput = styled.input`
 export const SearchIcon = styled(FaSearch)`
   width: 20px;
   height: 20px;
-  fill: #333;
+  fill: ${({ theme }) => theme.color.primary};
   margin-right: 5px;
   cursor: pointer;
 `;
@@ -51,8 +50,8 @@ export const SearchDivWrap = styled.div`
 `;
 
 export const SearchResultContainer = styled.div`
-  background-color: white;
-  border: 1px solid black;
+  background-color: ${({ theme }) => theme.color.default};
+  border: 1px solid ${({ theme }) => theme.color.primary};
   padding: 10px;
   margin-top: 10px;
 `;
@@ -61,7 +60,7 @@ export const DropdownContainer = styled.div`
   top: 100%;
   left: 0;
   width: 100%;
-  background-color: #ffffff;
+  background-color: ${({ theme }) => theme.color.default};
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   overflow: hidden;
@@ -78,14 +77,14 @@ export const DropdownContainer = styled.div`
 
 export const NoSearchResult = styled.div`
   font-size: 14px;
-  color: red;
+  color: ${({ theme }) => theme.color.red};
   margin-top: 10px;
 `;
 export const LinkStyle = styled(Link)`
-  color: black;
+  color: ${({ theme }) => theme.color.primary};
   text-decoration: none;
   font-weight: bold;
   &:hover {
-    color: #333;
+    color: ${({ theme }) => theme.color.lightgray};
   }
 `;

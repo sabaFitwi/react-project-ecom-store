@@ -16,8 +16,7 @@ export const BannerWrapper = styled.div`
 
 export const BannerText = styled.h2`
   font-size: 2rem;
-  color: #333;
+  color: ${({ theme }) => theme.color.primary};
   text-align: center;
-
-  margin-bottom: 1rem;
+  margin-bottom: 10px;
 `;

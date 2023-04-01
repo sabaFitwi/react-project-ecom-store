@@ -22,12 +22,12 @@ export const SuccessMessage = styled.h1`
 export const BackToStoreLink = styled(Link)`
   font-size: 1.2rem;
   text-decoration: none;
-  color: #ffffff;
-  background-color: #333;
+  color: ${({ theme }) => theme.color.default};
+  background-color: ${({ theme }) => theme.color.primary};
   padding: 10px 20px;
   border-radius: 5px;
   &:hover {
-    background-color: black;
+    background-color: ${({ theme }) => theme.color.primary};
   }
   ${media.tablet} {
     font-size: 1rem;

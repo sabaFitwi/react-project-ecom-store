@@ -14,7 +14,7 @@ const CheckoutSuccess = () => {
   return (
     <C.Container>
       <C.SuccessMessage>Your order was successful!</C.SuccessMessage>
-      <C.BackToStoreLink href="/">Go back to store</C.BackToStoreLink>
+      <C.BackToStoreLink to="/">Go back to store</C.BackToStoreLink>
     </C.Container>
   );
 };

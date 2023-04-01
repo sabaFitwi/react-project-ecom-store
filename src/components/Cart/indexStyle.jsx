@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { media } from "../../styles/media";
 
 export const Wrapper = styled.div`
   margin: auto;
@@ -9,7 +10,7 @@ export const PriceQtyWrapper = styled.div`
   display: flex;
   align-items: flex-start;
   gap: 30px;
-  @media (max-width: 768px) {
+  ${media.tablet} {
     flex-direction: column;
     align-items: flex-start;
     gap: 0;
@@ -22,7 +23,7 @@ export const Row = styled.div`
   align-items: start;
   justify-content: space-between;
   padding: 16px 0;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid ${({ theme }) => theme.color.lightgray};
 `;
 
 export const RemoveButton = styled.button`
@@ -42,7 +43,9 @@ export const TopButton = styled.button`
   cursor: pointer;
   border: ${(props) => props.type === "filled" && "none"};
   background-color: ${(props) =>
-    props.type === "filled" ? "black" : "transparent"};
+    props.type === "filled"
+      ? ({ theme }) => theme.color.primary
+      : "transparent"};
   color: ${(props) => props.type === "filled" && "white"};
 `;
 
@@ -52,7 +55,7 @@ export const BottomSection = styled.div`
   gap: 30px;
   justify-content: space-between;
 
-  @media (max-width: 768px) {
+  ${media.tablet} {
     grid-template-columns: 1fr;
     padding: 8px;
   }
@@ -64,31 +67,12 @@ export const Image = styled.img`
   object-fit: cover;
   margin: 10px;
 `;
-// export const Image = styled.img`
-//   width: 150px;
-//   height: 150px;
-//   object-fit: cover;
-//   margin: 10px;
-//   position: relative;
-//   &:before {
-//     content: "DISCOUNT";
-//     position: absolute;
-//     top: -20px;
-//     left: -40px;
-//     background-color: red;
-//     color: white;
-//     padding: 5px;
-//     transform: rotate(-45deg);
-//     font-size: 14px;
-//     font-weight: bold;
-//   }
-// `;
 
 export const ProductName = styled.p`
   font-size: 18px;
   margin-top: 0;
 
-  @media (max-width: 468px) {
+  ${media.mobile} {
     font-size: 15px;
   }
 `;
@@ -119,13 +103,13 @@ export const ProductPrice = styled.p`
 
 export const Summary = styled.div`
   flex: 1;
-  border: 0.5px solid lightgray;
+  border: 0.5px solid ${({ theme }) => theme.color.lightgray};
   border-radius: 10px;
   padding: 20px;
   height: 100vh;
   position: sticky;
   top: 0;
-  @media (max-width: 768px) {
+  ${media.tablet} {
     height: auto;
   }
 `;
@@ -147,8 +131,8 @@ export const SummaryItem = styled.div`
 export const CheckoutButton = styled.button`
   width: 100%;
   padding: 10px;
-  background-color: black;
-  color: white;
+  background-color: ${({ theme }) => theme.color.button};
+  color: ${({ theme }) => theme.color.default};
   font-weight: 600;
 `;
 
@@ -156,8 +140,8 @@ export const ClearButton = styled.button`
   width: 100%;
   padding: 10px;
   margin-top: 10px;
-  background-color: white;
-  color: black;
+  background-color: ${({ theme }) => theme.color.default};
+  color: ${({ theme }) => theme.color.primary};
   font-weight: 600;
 `;
 export const EmptyItem = styled.h2`

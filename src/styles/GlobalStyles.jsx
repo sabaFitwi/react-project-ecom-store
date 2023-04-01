@@ -2,27 +2,18 @@ import { createGlobalStyle } from "styled-components";
 import { media } from "./media";
 
 const GlobalStyle = createGlobalStyle`
- html 
 
- {  
-    --color-primary:"red",
-    --color-secondary:"tomato",
-    --color-light:"black",
-    --color-text:"snow",
-    --color-textDark:"gray",
-    --color-bgDefault:"white",
-    --color-bgPrimary:"darkBlue",
-    --color-bgSecondary:"darkBlue",
-    --color-bgLight:"aliceBlue",
-    --color-hoverColor:"aliceBlue",
-    
- }
 body
 {
     margin:0;
     padding:0;
-    background-color: white;
+    background-color:${({ theme }) => theme.color.default};
     min-height: 100vh;
+    @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+    *{
+        font-family: 'Nanum Gothic', sans-serif;
+
+}
 } 
 p{
     font-size:20px;
@@ -41,6 +32,7 @@ h1
     font-weight: 400;
     text-align:center;
     letter-spacing: 1.5px;
+    color:${({ theme }) => theme.color.primary};
    
 
 ${media.tablet}{
@@ -49,6 +41,7 @@ ${media.tablet}{
 ${media.mobile}{
     font-size: 20px; 
 }
+
 }
 h2
 {
