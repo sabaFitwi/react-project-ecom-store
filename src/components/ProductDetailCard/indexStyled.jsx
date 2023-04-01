@@ -40,9 +40,10 @@ export const ProductImage = styled.img`
 export const ProductInfoContainer = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   margin-left: 16px;
   flex-grow: 1;
+  background: white;
 
   ${media.tablet} {
     margin-left: 0;
@@ -51,6 +52,7 @@ export const ProductInfoContainer = styled.div`
 
 export const ProductTitle = styled.h1`
   font-size: 24px;
+  text-align: left;
 
   ${media.tablet} {
     font-size: 20px;
@@ -73,9 +75,9 @@ export const ProductRating = styled.p`
   }
 `;
 
-export const ProductPrice = styled.p`
+export const ProductPrice = styled.h2`
   font-size: 24px;
-  font-weight: bold;
+  font-weight: 300;
   margin-bottom: 0;
 
   ${media.tablet} {
@@ -84,14 +86,19 @@ export const ProductPrice = styled.p`
 `;
 
 export const AddToCartButton = styled.button`
+  width: 50%;
   background-color: #333;
   color: #fff;
-  border: none;
+  border: 1px solid lightgrey;
   border-radius: 4px;
   padding: 8px;
   font-size: 16px;
   cursor: pointer;
   margin-top: 16px;
+  &:hover {
+    background-color: #fff;
+    color: #333;
+  }
 
   ${media.tablet} {
     margin-top: 40px;
@@ -111,4 +118,61 @@ export const Notification = styled.div`
   ${media.tablet} {
     top: 0;
   }
+`;
+export const Review = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+`;
+export const NoReviewText = styled.div``;
+export const ReviewItem = styled.div`
+   display:flex;
+   flex-direction:column;
+   align-items: start;
+   justify-content: center;
+  margin-bottom: 20px;
+  border: 1px solid lightgray;
+  padding 10px;
+  background:white;
+`;
+
+export const ReviewContainer = styled.div`
+  margin-top: 30px;
+  padding: 20px;
+`;
+
+export const ReviewHeader = styled.h3`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+`;
+
+export const ReviewUserName = styled.p`
+  font-size: 16px;
+  font-weight: bold;
+  margin-right: 10px;
+`;
+
+export const ReviewRating = styled.p`
+  font-size: 16px;
+`;
+
+export const ReviewDescription = styled.p`
+  font-size: 14px;
+  padding-left: 50px;
+  margin-top: 0;
+`;
+export const ReviewAvatar = styled.div`
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: pink;
+  margin-right: 10px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 14px;
 `;

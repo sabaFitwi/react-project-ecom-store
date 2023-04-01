@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { media } from "../../../styles/media";
 
 export const HeaderWrapper = styled.div`
   display: grid;
@@ -14,4 +15,10 @@ export const Logo = styled.img`
   width: 300px;
   height: auto;
   padding-left: 10px;
+  ${media.tablet} {
+    width: 170px;
+  }
+  ${media.mobile} {
+    width: 150px;
+  }
 `;

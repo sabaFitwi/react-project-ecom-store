@@ -17,6 +17,7 @@ const CartBag = () => {
     plusOne,
     minusOne,
     removeFromCart,
+    clearCart,
   } = useCart();
 
   useEffect(() => {
@@ -30,6 +31,11 @@ const CartBag = () => {
   if (hasErrors) {
     return <div>Error is occurring do some thing</div>;
   }
+
+  const handelClearCart = () => {
+    clearCart();
+  };
+
   /**
    * calculating the total price
    */
@@ -105,8 +111,9 @@ const CartBag = () => {
             <p>$ {total.toFixed(2)}</p>
           </C.SummaryItem>{" "}
           <Link to={`/checkoutSuccess`}>
-            <C.Button>CHECKOUT NOW</C.Button>
+            <C.CheckoutButton>CHECKOUT NOW</C.CheckoutButton>
           </Link>
+          <C.ClearButton onClick={handelClearCart}>CLEAR CART</C.ClearButton>
         </C.Summary>
       </C.BottomSection>
     </C.Wrapper>

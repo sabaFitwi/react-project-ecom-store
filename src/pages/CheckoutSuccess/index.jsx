@@ -3,6 +3,9 @@ import { useCart } from "../../hook/useCart";
 import * as C from "./indexStyle";
 
 const CheckoutSuccess = () => {
+  useEffect(() => {
+    document.title = "Ecom | Checkout Success";
+  }, []);
   const { clearCart } = useCart();
   useEffect(() => {
     clearCart();

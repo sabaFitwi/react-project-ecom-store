@@ -144,11 +144,20 @@ export const SummaryItem = styled.div`
   font-size: ${(props) => props.type === "total" && "20px"};
 `;
 
-export const Button = styled.button`
+export const CheckoutButton = styled.button`
   width: 100%;
   padding: 10px;
   background-color: black;
   color: white;
+  font-weight: 600;
+`;
+
+export const ClearButton = styled.button`
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: white;
+  color: black;
   font-weight: 600;
 `;
 export const EmptyItem = styled.h2`

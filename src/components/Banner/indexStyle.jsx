@@ -18,6 +18,6 @@ export const BannerText = styled.h2`
   font-size: 2rem;
   color: #333;
   text-align: center;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
   margin-bottom: 1rem;
 `;
