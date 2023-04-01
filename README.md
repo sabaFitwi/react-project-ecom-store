@@ -34,8 +34,8 @@ The checkout success page should display a message notifying the user that their
 
 The contact page should include a form with fields for full name, subject, email, and body. Form validation should be implemented, with the following requirements:
 
--Full name: Minimum of 3 characters, required
--Subject: Minimum of 3 characters, required
--Email: Must be a valid email address, required
--Body: Minimum of 3 characters, required
-React Router should be used to switch between pages. The design should be responsive, and it is recommended to use styled-components or CSS modules to design from scratch. The code should be clean and well-formatted. TypeScript is not required.
+- Full name: Minimum of 3 characters, required
+- Subject: Minimum of 3 characters, required
+- Email: Must be a valid email address, required
+- Body: Minimum of 3 characters, required
+  React Router should be used to switch between pages. The design should be responsive, and it is recommended to use styled-components or CSS modules to design from scratch. The code should be clean and well-formatted. TypeScript is not required.
