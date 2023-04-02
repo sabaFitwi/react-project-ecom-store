@@ -9,7 +9,7 @@ const theme = {
     green: "#3cb371",
     default: "#fff",
     pink: "pink",
-    red: "#ff0000",
+    red: "#c82c2a",
   },
 };
 
