@@ -25,7 +25,7 @@ export const NavigationItem = styled(Link)`
 
   ${media.mobile} {
     margin: 8px 0;
-    color: ${({ theme }) => theme.color.default};
+    color: ${({ theme }) => theme.color.primary};
     z-index: 1;
   }
 `;
