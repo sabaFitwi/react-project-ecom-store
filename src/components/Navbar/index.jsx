@@ -13,7 +13,9 @@ const Nav = () => {
     setIsOpen(!isOpen);
   };
   const { cart } = useCartStore();
-  const cartCount = new Set(cart.map((item) => item.id)).size;
+  const cartCount = Array.isArray(cart)
+    ? new Set(cart.map((item) => item.id)).size
+    : 0;
 
   return (
     <S.NavigationBar>
