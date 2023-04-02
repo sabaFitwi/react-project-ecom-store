@@ -1,16 +1,19 @@
 import React, { useState } from "react";
 import { GiShoppingBag } from "react-icons/gi";
 import { useLocation } from "react-router-dom";
+import useCartStore from "../../hook/useCartStore";
 
 import * as S from "./indexStyle";
 
-const Nav = ({ cartCount }) => {
+const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+  const { cart } = useCartStore();
+  const cartCount = new Set(cart.map((item) => item.id)).size;
 
   return (
     <S.NavigationBar>

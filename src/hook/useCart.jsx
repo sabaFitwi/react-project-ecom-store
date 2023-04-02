@@ -13,6 +13,14 @@ function useCart() {
   const removeFromCart = useCartStore((state) => state.removeFromCart);
 
   function addToCart(id) {
+    const product = products.find((product) => product.id === id);
+    const isInCart = cart.some((product) => product.id === id);
+
+    if (isInCart) {
+      alert(`${product.title} is already in the cart!`);
+      return;
+    }
+
     addProductToCart(id);
   }
 
