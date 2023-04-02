@@ -73,3 +73,7 @@ export const Button = styled.button`
     color: black;
   }
 `;
+export const FormValid = styled.p`
+  text-align: center;
+  color: ${({ theme }) => theme.color.green};
+`;

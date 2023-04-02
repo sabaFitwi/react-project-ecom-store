@@ -9,6 +9,8 @@ const ContactForm = () => {
     body: "",
   });
 
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
   const handleInputChange = (event) => {
     setFormData({
       ...formData,
@@ -20,11 +22,15 @@ const ContactForm = () => {
     event.preventDefault();
 
     console.log(formData);
+
+    setIsSubmitted(true);
   };
 
   return (
     <>
       <h1>Contact</h1>
+
+      {isSubmitted && <F.FormValid>Thank you for contacting us!</F.FormValid>}
 
       <F.FormWrapper onSubmit={handleSubmit}>
         <F.InputWrapper>
