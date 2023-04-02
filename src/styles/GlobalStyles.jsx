@@ -1,6 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 import { media } from "./media";
 
+// @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap');
 const GlobalStyle = createGlobalStyle`
 
 body
@@ -9,10 +10,14 @@ body
     padding:0;
     background-color:${({ theme }) => theme.color.default};
     min-height: 100vh;
-    font-family:  sans-serif;
+   
   
+
+    *{
+        font-family:  sans-serif;
+
+}
 } 
- 
 p{
     font-size:20px;
     margin:0;
