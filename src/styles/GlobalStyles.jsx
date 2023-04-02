@@ -9,15 +9,10 @@ body
     padding:0;
     background-color:${({ theme }) => theme.color.default};
     min-height: 100vh;
-   
+    font-family:  sans-serif;
   
-  
-
 } 
-    *{
-        font-family:  sans-serif;
-
-}
+ 
 p{
     font-size:20px;
     margin:0;
