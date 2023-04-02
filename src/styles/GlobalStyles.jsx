@@ -9,11 +9,12 @@ body
     padding:0;
     background-color:${({ theme }) => theme.color.default};
     min-height: 100vh;
+   
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
   
-    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap');
 
     *{
-        font-family: 'Cormorant Garamond', serif;
+        font-family: 'Poppins', sans-serif;
 
 }
 } 

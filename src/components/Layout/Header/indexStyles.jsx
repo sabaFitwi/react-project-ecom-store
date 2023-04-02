@@ -12,7 +12,7 @@ export const HeaderWrapper = styled.div`
   padding: 20px;
 `;
 export const Logo = styled.img`
-  width: 300px;
+  width: 250px;
   height: auto;
   padding-left: 10px;
   ${media.tablet} {
