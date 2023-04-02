@@ -30,9 +30,8 @@ const ContactForm = () => {
     <>
       <h1>Contact</h1>
 
-      {isSubmitted && <F.FormValid>Thank you for contacting us!</F.FormValid>}
-
       <F.FormWrapper onSubmit={handleSubmit}>
+        {isSubmitted && <F.FormValid>Thank you for contacting us!</F.FormValid>}
         <F.InputWrapper>
           <F.InputLabel>Full Name</F.InputLabel>
           <F.Input
