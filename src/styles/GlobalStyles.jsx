@@ -1,7 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 import { media } from "./media";
 
-// @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap');
 const GlobalStyle = createGlobalStyle`
 
 body
