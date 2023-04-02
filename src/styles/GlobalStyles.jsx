@@ -9,9 +9,11 @@ body
     padding:0;
     background-color:${({ theme }) => theme.color.default};
     min-height: 100vh;
-    @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+  
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap');
+
     *{
-        font-family: 'Nanum Gothic', sans-serif;
+        font-family: 'Cormorant Garamond', serif;
 
 }
 } 
